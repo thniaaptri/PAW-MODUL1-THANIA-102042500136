@@ -1,0 +1,96 @@
+/* Mengatur font dasar dan warna latar belakang */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f8f9fa;
+    color: #333;
+}
+
+/* NAVBAR - Menggunakan Flexbox */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 50px;
+    background-color: #ffffff;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+.navbar .logo { font-size: 24px; font-weight: bold; }
+.navbar .menu a {
+    margin-left: 20px; text-decoration: none; color: #555; font-weight: 500;
+}
+
+/* HERO SECTION */
+.hero {
+    background-color: #1a1a2e;
+    color: #ffffff;
+    padding: 80px 50px;
+    margin: 20px 50px;
+    border-radius: 15px;
+}
+.hero h4 { margin: 0; font-weight: normal; letter-spacing: 2px; color: #ccc; }
+.hero h1 { font-size: 48px; margin: 10px 0 20px 0; }
+.btn-hero {
+    background-color: #ffffff; color: #1a1a2e; padding: 10px 25px;
+    text-decoration: none; font-weight: bold; border-radius: 5px;
+}
+
+/* KATALOG & GRID PRODUK[cite: 1] */
+.katalog-section { padding: 20px 50px; }
+.katalog-header {
+    display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px;
+}
+.katalog-header h2 { margin: 0; font-size: 32px; }
+.katalog-header p { margin: 0; color: #666; font-weight: bold; }
+
+/* Menggunakan CSS Grid untuk 3 kolom[cite: 1] */
+.product-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+}
+
+/* KARTU PRODUK[cite: 1] */
+.card {
+    background-color: #ffffff; padding: 25px; border-radius: 12px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+    transition: transform 0.2s ease;
+}
+.card:hover { transform: translateY(-5px); } /* Efek hover animasi[cite: 1] */
+
+.kategori { font-size: 14px; color: #888; font-weight: bold; display: block; margin-bottom: 10px; }
+.nama-produk { font-size: 22px; margin: 0 0 15px 0; }
+
+/* FORMAT HARGA & DISKON[cite: 1] */
+.harga-normal { font-size: 20px; font-weight: bold; color: #1a1a2e; display: block; margin-bottom: 15px; }
+.harga-coret { text-decoration: line-through; color: #aaa; font-size: 14px; }
+.badge-diskon { background-color: #e74c3c; color: white; padding: 3px 8px; border-radius: 4px; font-size: 12px; font-weight: bold; margin-left: 5px; }
+.harga-diskon { font-size: 20px; font-weight: bold; color: #e74c3c; display: block; margin: 5px 0 15px 0; }
+
+/* STOK DAN TOMBOL[cite: 1] */
+.stok { font-size: 15px; margin-bottom: 20px; }
+.tersedia { color: #2ecc71; font-weight: bold; }
+.habis { color: #e74c3c; font-weight: bold; }
+
+.btn-beli {
+    width: 100%; padding: 12px; background-color: #3498db; color: white;
+    border: none; border-radius: 6px; font-size: 16px; font-weight: bold; cursor: pointer;
+}
+.btn-beli:hover { background-color: #2980b9; }
+.btn-disabled { background-color: #bdc3c7; cursor: not-allowed; }
+.btn-disabled:hover { background-color: #bdc3c7; }
+
+/* FOOTER[cite: 1] */
+footer { text-align: center; padding: 30px; margin-top: 40px; color: #888; }
+
+/* RESPONSIVE LAYOUT (Media Query)[cite: 1] */
+@media (max-width: 900px) {
+    .product-grid { grid-template-columns: repeat(2, 1fr); }
+}
+@media (max-width: 600px) {
+    .product-grid { grid-template-columns: 1fr; }
+    .navbar, .katalog-header { flex-direction: column; gap: 15px; }
+    .hero { margin: 10px; padding: 40px 20px; }
+    .katalog-section { padding: 20px; }
+}
